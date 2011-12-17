@@ -1,6 +1,11 @@
 ; Rooms Make File
 ; ---------------
 ; Brings together all the modules and libraries required to run Rooms
+;
+; Run with command drush make --prepare-install --contrib-destination=sites/all rooms.make
+; Destination is necessary to make sure everything is in the same place as there is a nested make file
+; in the geofield module that places the libraries module in simply the default destination
+
 
 core = 7.x
 api = 2
@@ -8,44 +13,52 @@ api = 2
 ;Core project
 projects[] = drupal
 
-;Building Blocks
-projects[ctools][subdir] = "contrib"
+;Rooms Profile
+projects[drupalrooms][type] = profile
+projects[drupalrooms][download][type] = git
+projects[drupalrooms][download][url] = git@github.com:istos/Drupal-Rooms-Profile.git
+
+
+#projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.0-rc1"
 
-projects[views][subdir] = "contrib"
+#projects[views][subdir] = "contrib"
 projects[views][version] = "3.0-rc1"
 
-projects[entity][subdir] = "contrib"
+#projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-rc1"
 
-projects[rules][subdir] = "contrib"
+#projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.0"
 
-projects[commerce][subdir] = "contrib"
+#projects[commerce][subdir] = "contrib"
 projects[commerce][version] = "1.1"
 
-projects[date][subdir] = "contrib"
+#projects[date][subdir] = "contrib"
 projects[date][version] = "2.0-alpha5"
 
-projects[addressfield][subdir] = "contrib"
+#projects[addressfield][subdir] = "contrib"
 projects[addressfield][version] = "1.0-beta2"
 
-projects[colorbox][subdir] = "contrib"
+#projects[colorbox][subdir] = "contrib"
 projects[colorbox][version] = "1.2"
 
-projects[libraries][subdir] = "contrib"
-projects[libraries][version] = "1.0"
+# Libraries is required by for now geofield takes care of it. 
+# Not quite sure how to stop the geofield nested make file from running 
+# which means that for now we will have to trust it to do it.
+#projects[libraries][subdir] = "contrib"
+#projects[libraries][version] = "1.0"
 
-projects[geofield][subdir] = "contrib"
+#projects[geofield][subdir] = "contrib"
 projects[geofield][version] = "1.0-beta2"
 
-projects[geocoder][subdir] = "contrib"
+#projects[geocoder][subdir] = "contrib"
 projects[geocoder][version] = "1.x-dev"
 
-projects[leaflet][subdir] = "contrib"
+#projects[leaflet][subdir] = "contrib"
 projects[leaflet][version] = "1.x-dev"
 
-projects[leaflet][subdir] = "contrib"
+#projects[leaflet][subdir] = "contrib"
 projects[leaflet][version] = "1.x-dev"
 
 
@@ -54,10 +67,6 @@ projects[rooms][download][type] = "git"
 projects[rooms][download][module] = "rooms"
 projects[rooms][download][revision] = "master"
 
-;Rooms Profile
-projects[drupalrooms][type] = profile
-projects[drupalrooms][download][type] = git
-projects[drupalrooms][download][url] = git@github.com:istos/Drupal-Rooms-Profile.git
 
 ;libraries
 libraries[fullcalendar][download][type] = "get"
