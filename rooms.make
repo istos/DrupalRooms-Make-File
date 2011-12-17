@@ -18,49 +18,27 @@ projects[drupalrooms][type] = profile
 projects[drupalrooms][download][type] = git
 projects[drupalrooms][download][url] = git@github.com:istos/Drupal-Rooms-Profile.git
 
-
-#projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.0-rc1"
-
-#projects[views][subdir] = "contrib"
 projects[views][version] = "3.0-rc1"
-
-#projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-rc1"
-
-#projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.0"
-
-#projects[commerce][subdir] = "contrib"
 projects[commerce][version] = "1.1"
-
-#projects[date][subdir] = "contrib"
 projects[date][version] = "2.0-alpha5"
-
-#projects[addressfield][subdir] = "contrib"
 projects[addressfield][version] = "1.0-beta2"
-
-#projects[colorbox][subdir] = "contrib"
 projects[colorbox][version] = "1.2"
+projects['i18n']['version'] = "1.2"
 
 # Libraries is required by for now geofield takes care of it. 
 # Not quite sure how to stop the geofield nested make file from running 
 # which means that for now we will have to trust it to do it.
-#projects[libraries][subdir] = "contrib"
 #projects[libraries][version] = "1.0"
 
-#projects[geofield][subdir] = "contrib"
 projects[geofield][version] = "1.0-beta2"
-
-#projects[geocoder][subdir] = "contrib"
 projects[geocoder][version] = "1.x-dev"
-
-#projects[leaflet][subdir] = "contrib"
+projects[leaflet][version] = "1.x-dev"
 projects[leaflet][version] = "1.x-dev"
 
-#projects[leaflet][subdir] = "contrib"
-projects[leaflet][version] = "1.x-dev"
-
+projects[features][version] = "1.0-beta4"
 
 ;Rooms
 projects[rooms][download][type] = "git"
